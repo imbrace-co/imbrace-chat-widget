@@ -1,0 +1,64 @@
+.sc-message {
+    margin: 0px 10px 0px 10px;
+    padding-bottom: 10px;
+}
+
+.sc-message--content {
+    width: 100%;
+    display: flex;
+}
+.sc-message--content span {
+    font-size: var(--custom-font-size);
+}
+
+@media (max-width: 768px) {
+    .sc-message--content div {
+        width: 100%;
+    }
+}
+
+.sc-message--content.sent {
+    justify-content: flex-end;
+}
+
+.sc-message--content.sent .sc-message--avatar {
+    display: none;
+}
+
+.sc-message--avatar {
+    background-image: url(https://d13yacurqjgara.cloudfront.net/assets/avatar-default-aa2eab7684294781f93bc99ad394a0eb3249c5768c21390163c9f55ea8ef83a4.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+}
+
+.custom-link-preview .Title,
+.custom-link-preview .Secondary {
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-link-preview .Title {
+    -webkit-line-clamp: 2;
+}
+
+.custom-link-preview .Secondary {
+    -webkit-line-clamp: 1;
+}
+
+.custom-link-preview .Image {
+    height: 15vh;
+}
+
+@media (max-width: 470px) {
+    .sc-message {
+        width: 90%;
+    }
+}
