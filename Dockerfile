@@ -8,7 +8,7 @@ WORKDIR /chat-widget
 
 RUN yarn install
 
-RUN yarn build-release-base
+RUN yarn build
 
 FROM nginx:alpine
 
