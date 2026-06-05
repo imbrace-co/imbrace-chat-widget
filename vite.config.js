@@ -36,7 +36,7 @@ const config = ({ mode }) => {
             port: 5000,
             proxy: {
                 '/api': {
-                    target: 'http://localhost:9001n',
+                    target: 'http://localhost:9001',
                     changeOrigin: true,
                     configure: (proxy) => {
                         proxy.on('proxyReq', function (proxyReq) {
@@ -49,7 +49,7 @@ const config = ({ mode }) => {
                     rewrite: (reqPath) => reqPath.replace(/^\/api/, ''),
                 },
                 '/ws': {
-                    target: 'http://localhost:9001n',
+                    target: 'http://localhost:9001',
                     changeOrigin: true,
                     ws: true,
                 },
