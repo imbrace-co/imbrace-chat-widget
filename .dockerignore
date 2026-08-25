@@ -1,0 +1,52 @@
+# The Dockerfile does `ADD ./ /chat-widget`, so everything not listed here ends
+# up in the build context and the builder image.
+
+# Version control
+.git
+.gitignore
+
+# Dependencies — reinstalled inside the image by `yarn install`. Copying the
+# host's node_modules would ship native binaries built for the wrong platform.
+node_modules
+
+# Build output — regenerated inside the image by `yarn build`
+build
+dist
+
+# Yarn caches. NOTE: .yarn/releases is deliberately NOT ignored — .yarnrc.yml
+# sets `yarnPath: .yarn/releases/yarn-1.22.19.cjs`, so the release must ship
+# with the context or `yarn install` fails inside the image.
+.yarn/cache
+.yarn/install-state.gz
+.yarn-cache
+
+# Local env files. The runtime `env` is mounted at
+# /usr/share/nginx/html/env on deploy (see env.example), never baked in.
+.env
+.env.*
+env
+secrets.env
+!*.enc.env
+
+# Editor / OS noise
+.vscode
+*code-workspace
+.DS_Store
+*.DS_Store
+
+# Logs and diagnostics
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Test/coverage artifacts
+coverage
+*.lcov
+.nyc_output
+
+# Deploy configs not needed by the build
+.elasticbeanstalk
+shell.nix
