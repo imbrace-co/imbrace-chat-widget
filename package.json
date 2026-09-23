@@ -2,6 +2,7 @@
     "name": "chat_widget",
     "version": "0.1.0",
     "private": true,
+    "license": "MIT",
     "dependencies": {
         "@ctrl/tinycolor": "^3.5.0",
         "@dhaiwat10/react-link-preview": "^1.14.1",
